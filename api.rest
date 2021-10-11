@@ -1,0 +1,107 @@
+
+// Register a user
+post http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName" : "imran",
+    "lastName" : "sarkar",
+    "email" : "imran@gmail.com",
+    "password" : "password"
+}
+
+
+### Login a user
+post http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email" : "imran@yahoo.com",
+    "password" : "password"
+}
+
+
+### imran
+get http://localhost:5000/api/users
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+
+### tuser
+get http://localhost:5000/api/users
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+
+
+### tusers id
+get http://localhost:5000/api/users/6152b3f18e07f0fbc2b238d9
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+
+### imran id
+get http://localhost:5000/api/users/6152b4158e07f0fbc2b238dd
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+
+
+### search by name
+get http://localhost:5000/api/users/search/t
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYTk1NzEyNmM0YTgxNDVlNTNlMzQiLCJpYXQiOjE2MzI4MDcyNTV9.pdSE6ltjXuvansin_uIdisN6P9iVLzp_j_stdc1Pmx8
+
+
+### user tuser , req to imran 
+post http://localhost:5000/api/users/friendRequest/6152b4158e07f0fbc2b238dd
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+
+
+### user tuser , req delete imran 
+delete http://localhost:5000/api/users/friendRequest/6152b4158e07f0fbc2b238dd
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+
+### Reject Friend Request
+delete http://localhost:5000/api/users/rejectRequest/6152b4158e07f0fbc2b238dd
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+
+
+### user imran, accept request
+post http://localhost:5000/api/users/acceptRequest/6152b3f18e07f0fbc2b238d9
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+6152bf97ab0b477609980398
+
+### get a conversation
+get http://localhost:5000/api/conversations/6152c66a585755424b85739f
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+
+### add a message
+post http://localhost:5000/api/conversations/message
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+Content-Type: application/json
+
+{
+    "conversationId":"6152c66a585755424b85739f",
+    "message":"hello world"
+}
+
+###
+# get http://localhost:5000/api/users
+get http://localhost:5000/api/conversations/message/6152c66a585755424b85739f
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
+
+
+### tuser add a message
+post http://localhost:5000/api/conversations/message
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjNmMThlMDdmMGZiYzJiMjM4ZDkiLCJpYXQiOjE2MzI4MDk5NzB9.556-6Hh7C8hdpKCB63r_OLBzDaPMuEzF__f-a9lhaLI
+Content-Type: application/json
+
+{
+    "conversationId":"6152c66a585755424b85739f",
+    "message":"Tuser send a message..."
+}
+
+
+
+### upload file
+
+post http://localhost:5000/api/uploads/profile
+Authorization:token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUyYjQxNThlMDdmMGZiYzJiMjM4ZGQiLCJpYXQiOjE2MzI4MTAwMDV9.iJ8N_NGeBPaowupRKYst4wDZEH2jjofDQzS3m4nE9cM
